@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-module FA1(A,B,C,S,COUT);
+module FA (A,B,C,S,COUT);
 input A,B,C;
 output reg S,COUT; // reg only in behavioral model
 
