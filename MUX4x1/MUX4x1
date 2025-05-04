@@ -1,0 +1,17 @@
+`timescale 1ns/1ps
+module MUX4x1 (I,S,Y);
+input [3:0]I;
+input [1:0]S;
+output Y;
+wire Y1,Y2;
+
+MUX2x1 g1 (I[0],I[1],S[0],Y1);
+MUX2x1 g2 (I[2],I[3],S[0],Y2);
+MUX2x1 g3 (Y1,Y2,S[1],Y);
+
+
+
+
+
+
+endmodule  
