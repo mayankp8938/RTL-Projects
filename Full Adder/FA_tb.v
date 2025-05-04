@@ -1,11 +1,11 @@
 `timescale 1ns/10ps
 
-module FA1_tb;
+module FA_tb;
 
 reg A,B,C;
 wire COUT,S;
 
-FA1 dut (A,B,C,S,COUT);
+FA dut (A,B,C,S,COUT);
 
 initial 
 begin
