@@ -1,0 +1,10 @@
+`timescale 1ns/1ps
+module HA (A,B,Carry,Sum);
+input A,B;
+output Carry,Sum;
+
+assign {Carry,Sum} = A+B;
+
+
+
+endmodule 
