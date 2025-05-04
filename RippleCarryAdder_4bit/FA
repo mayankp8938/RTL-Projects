@@ -1,0 +1,13 @@
+`timescale 1ns/1ps
+module FA (A,B,C,Carry,Sum);
+input A,B,C;
+output Carry,Sum;
+wire C1,C2,C3;
+
+and g1 (C1,A,B);
+and g2 (C2,A,C);
+and g3 (C3,C,B);
+or g4 (Carry,C1,C2,C3);
+xor g5 (Sum,A,B,C);
+
+endmodule 
