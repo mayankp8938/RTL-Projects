@@ -1,9 +1,9 @@
 `timescale 1ns/10ps
 module FA1(A,B,C,S,COUT);
 input A,B,C;
-output reg S,COUT;
+output reg S,COUT; // reg only in behavioral model
 
-//assign {COUT,S} = A+B+C;
+  //assign {COUT,S} = A+B+C; // data flow
 
 //xor g1 (S,A,B,C);
 //and g2 (t1,A,B);             ///////// gate level
@@ -15,7 +15,7 @@ output reg S,COUT;
 // assign S = A^B^C;
 // assign COUT = ((A&B)|(B&C)|(C&A));   ///Data flow
 
-
+//behavioral model
 always @(*)
 
 begin 
