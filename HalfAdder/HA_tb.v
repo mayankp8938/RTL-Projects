@@ -3,7 +3,7 @@ module HA_tb();
 reg A,B;
 wire Carry,Sum;
 
-HA g1 (A,B,Carry,Sum);
+HA dut (A,B,Carry,Sum);
 
 initial begin 
 
