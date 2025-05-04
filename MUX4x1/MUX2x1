@@ -3,6 +3,19 @@ module MUX2x1 (I1,I2,S,Y);
 input I1,I2,S;
 output reg Y;
 
+
+//assign Y = (~S & I1)| (S & I2);  //DATA FLOW Output should be wire not reg
+//assign Y = S?(I2):(I1); HEIRARCHIAL DESIGN Output should be wire not reg
+
+ BEHAVIOURALMODELLING[CASE]
+//// always@(*)
+// begin
+// case(S)
+// 0:Y=I2;
+// 1:Y=I1;          
+// default Y=1'b0;
+// endcase
+// end
 always@(*)
 begin 
 if(S)
