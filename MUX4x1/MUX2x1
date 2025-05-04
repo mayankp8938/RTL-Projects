@@ -7,7 +7,7 @@ output reg Y;
 //assign Y = (~S & I1)| (S & I2);  //DATA FLOW Output should be wire not reg
 //assign Y = S?(I2):(I1); HEIRARCHIAL DESIGN Output should be wire not reg
 
- BEHAVIOURALMODELLING[CASE]
+ BEHAVIOURALMODELLING[CASE & IF]
 //// always@(*)
 // begin
 // case(S)
