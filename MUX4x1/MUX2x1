@@ -1,0 +1,13 @@
+`timescale 1ns/1ps
+module MUX2x1 (I1,I2,S,Y);
+input I1,I2,S;
+output reg Y;
+
+always@(*)
+begin 
+if(S)
+Y = I2;
+else 
+Y = I1;
+end
+endmodule 
