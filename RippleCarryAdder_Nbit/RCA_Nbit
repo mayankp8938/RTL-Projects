@@ -1,0 +1,23 @@
+`timescale 1ns/1ps
+module RCA_Nbit (A,B,Cin,Cout,Sum);
+parameter N = 8;
+input [N-1:0]A,B;
+input Cin;
+output Cout;
+output [N-1:0]Sum;
+wire [N:0]C;
+
+genvar i;
+assign C[0] = Cin;
+
+generate 
+for(i = 0; i<N; i = i+1)
+  begin:RCAN
+      FA g1 (A[i],B[i],C[i],C[i+1],Sum[i]);
+  end 
+endgenerate 
+
+assign Cout = C[N];
+
+
+endmodule  
