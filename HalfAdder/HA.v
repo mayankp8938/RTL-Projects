@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 module HA (A,B,Carry,Sum);
 input A,B;
-output reg Carry,Sum;
+output Carry,Sum; // for behavioral it should be reg
 
 
- data flow
+ //data flow
 assign Carry = A&B;
 assign Sum = A^B;
 
