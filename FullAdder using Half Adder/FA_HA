@@ -1,0 +1,14 @@
+`timescale 1ns/1ps
+module FA_HA (A,B,C,Carry,Sum);
+input A,B,C;
+output Carry,Sum;
+wire S1,C1,C2;
+
+HA g1 (A,B,C1,S1);
+HA g2 (C,S1,C2,Sum);
+or g3 (Carry,C2,C1);
+
+
+
+
+endmodule  
