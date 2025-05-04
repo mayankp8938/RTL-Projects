@@ -1,0 +1,25 @@
+`timescale 1ns/1ps
+module RCA_Nbit_tb();
+localparam N = 8;
+reg [N-1:0]A,B;
+reg Cin;
+wire [N-1:0]Sum;
+wire Cout;
+
+RCA_Nbit dut (A,B,Cin,Cout,Sum);
+
+initial 
+begin 
+Cin = 1'b0;
+A = 'd0 ; B = 'd0; 
+#5 A = 'd10 ; B = 'd25 ;
+#5 A = 'd129 ; B = 'd128;
+#5 A = 'd99 ; B = 'd27 ;
+#5 A = 'd77 ; B = 'd33 ;
+#5 A = 'd65 ; B = 'd127;
+#5 A = 'd255 ; B = 'd2 ;
+#5 A = 'd256 ; B = 'd2 ;
+
+#5 $finish;
+end 
+endmodule 
