@@ -1,0 +1,27 @@
+`timescale 1ns/1ps
+module CLA_Nbit_tb();
+localparam N = 8;
+reg [N-1:0]A,B;
+reg Cin;
+wire [N-1:0]Sum;
+wire Cout;
+wire [N:0]out;
+
+
+CLA_Nbit dut (A,B,Cin,Cout,Sum,out);
+
+initial 
+begin 
+Cin = 1'b0;
+A = 'd0 ; B = 'd0; 
+#5 A = 'd100 ; B = 'd25 ;
+#5 A = 'd128 ; B = 'd128;
+#5 A = 'd90 ; B = 'd102;
+#5 A = 'd70 ; B = 'd33 ;
+#5 A = 'd65 ; B = 'd75;
+#5 A = 'd15 ; B = 'd200 ;
+#5 A = 'd255; B = 'd5 ;
+
+#5 $finish;
+end 
+endmodule
