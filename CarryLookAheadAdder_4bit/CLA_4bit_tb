@@ -1,0 +1,25 @@
+`timescale 1ns/1ps
+module CLA_4bit_tb();
+reg [3:0]A,B;
+reg Cin;
+wire [3:0]Sum;
+wire Cout;
+wire [4:0]out;
+
+CLA_4bit_tb dut (A,B,Cin,Cout,Sum,out);
+
+initial 
+begin 
+Cin = 1'b0;
+A = 'd0 ; B = 'd0; 
+#5 A = 'd10 ; B = 'd25 ;
+#5 A = 'd12 ; B = 'd4;
+#5 A = 'd9 ; B = 'd2;
+#5 A = 'd7 ; B = 'd3 ;
+#5 A = 'd6 ; B = 'd7;
+#5 A = 'd15 ; B = 'd2 ;
+#5 A = 'd2; B = 'd5 ;
+
+#5 $finish;
+end 
+endmodule 
