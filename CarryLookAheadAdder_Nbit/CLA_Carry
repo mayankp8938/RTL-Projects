@@ -1,0 +1,9 @@
+`timescale 1ns/1ps
+module CLA_Carry (Y,G,P,C);
+input G,P,C;
+output Y;
+
+
+assign Y = G | (P&C);
+
+endmodule 
