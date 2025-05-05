@@ -1,0 +1,32 @@
+`timescale 1ns/1ps
+module CLA_Nbit (A,B,Cin,Cout,Sum,out);
+parameter N = 8;
+input [N-1:0]A,B;
+input Cin;
+output [N-1:0]Sum;
+output Cout;
+output [N:0]out;
+
+wire [N-1:0]P,G;
+wire [N:0]C;
+
+genvar i;
+
+assign C[0] = Cin;
+assign P = A^B; // carry propagate 
+assign G = A&B; // Carry generate 
+
+
+generate 
+  for(i=0;i<N;i=i+1)
+  begin: CLA
+  CLA_Carry g1 (C[i+1],G[i],P[i],C[i]);       //Ci+1  = gi + pi.ci;
+  end 
+ endgenerate 
+ 
+ assign Sum = P^C;
+ assign Cout = C[N];
+ assign out = {Cout,Sum};
+ 
+
+endmodule
